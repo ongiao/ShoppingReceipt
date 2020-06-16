@@ -40,7 +40,8 @@ public class ShoppingReceipt {
 
         for (Product product : this.items) {
             String itemAndPrice = product.getProductName()
-                    + StringHelper.ensureSpace(priceIndex, product.getProductName()) + "$" + String.format("%.2f", product.getUnitPrice());
+                    + StringHelper.ensureSpace(priceIndex, product.getProductName())
+                    +"$" + String.format("%.2f", product.getUnitPrice());
 
             receipt += itemAndPrice + StringHelper.ensureSpace(qtyIndex + 2, itemAndPrice) + product.getQuantity() + "\n";
         }
@@ -49,9 +50,15 @@ public class ShoppingReceipt {
         String formatTax = String.format("%.2f", tax);
         String formatTotal = String.format("%.2f", total);
 
-        receipt += "subtotal:" + StringHelper.ensureSpace(qtyIndex + 2 - String.valueOf(formatSubTotal).length(), "subtotal:") + "$" + formatSubTotal + "\n"
-                + "tax:" + StringHelper.ensureSpace(qtyIndex + 2 - String.valueOf(formatTax).length(), "tax:") + "$" + formatTax + "\n"
-                + "total:" + StringHelper.ensureSpace(qtyIndex + 2 - String.valueOf(formatTotal).length(), "total:") + "$" + formatTotal;
+        receipt += "subtotal:"
+                + StringHelper.ensureSpace(qtyIndex + 2 - String.valueOf(formatSubTotal).length(), "subtotal:")
+                + "$" + formatSubTotal + "\n"
+                + "tax:"
+                + StringHelper.ensureSpace(qtyIndex + 2 - String.valueOf(formatTax).length(), "tax:")
+                + "$" + formatTax + "\n"
+                + "total:"
+                + StringHelper.ensureSpace(qtyIndex + 2 - String.valueOf(formatTotal).length(), "total:")
+                + "$" + formatTotal;
 
         return receipt;
     }
