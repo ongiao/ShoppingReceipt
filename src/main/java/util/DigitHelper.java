@@ -3,7 +3,7 @@ package util;
 import java.math.BigDecimal;
 
 public class DigitHelper {
-    public static Double roundup(Double value) {
+    public static double roundUp (double value) {
         return Math.ceil(value * 20.0) / 20.0;
     }
 

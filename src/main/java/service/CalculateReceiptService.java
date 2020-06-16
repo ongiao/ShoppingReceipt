@@ -38,7 +38,7 @@ public class CalculateReceiptService {
         double taxRate = ExemptCatagory.EXEMPT_CATAGORIES.get(location).contains(productName) ? 0 :
                 Double.valueOf(PropertiesHelper.getValue(Resources.TAX_RATE_FILE_PATH, location));
 
-        double salesTax = DigitHelper.formatDigit(DigitHelper.roundup(product.getUnitPrice() * quantity * taxRate));
+        double salesTax = DigitHelper.formatDigit(DigitHelper.roundUp(product.getUnitPrice() * quantity * taxRate));
         this.cart.addTax(salesTax);
 
         return salesTax;

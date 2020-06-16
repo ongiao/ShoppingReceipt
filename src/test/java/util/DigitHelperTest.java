@@ -11,7 +11,7 @@ public class DigitHelperTest {
 
 
         for (int i = 0; i < actual.length; i++) {
-            double got = DigitHelper.roundup(actual[i]);
+            double got = DigitHelper.roundUp(actual[i]);
             Assert.assertEquals(expected[i].toString(), String.valueOf(got));
         }
     }
