@@ -2,7 +2,7 @@
 
 ### Introduction
 This is a program to print receipt for a shopping cart including sales tax.  
-The program has the follow structures in the src package:  
+The program has the follow structures in the src/main/java package:  
  * ***config*** : Store some constant variables   
  * ***model*** : Entities such as Prooduct, ShoppingCart and ShoppingReceipt  
  * ***service*** : Business logics for calculation  
